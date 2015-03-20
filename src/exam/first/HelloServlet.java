@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HelloServlet
  */
-@WebServlet("/hello")
+@WebServlet("/HelloServlet") //URLMapping
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,9 +29,17 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		 response.setContentType("text/html; charset= UTF-8");
+		 request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print("hello");
+		String n = request.getParameter("name");
+		String i = request.getParameter("id");
+		String p = request.getParameter("pwd");
+		out.print("hello - get <br>");
+		out.print("이름" + n + "<br>");
+		out.print(i + "<BR>");
+		out.print(p);
+		
 	}
 
 	/**
@@ -39,6 +47,21 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+	
+	
+		 response.setContentType("text/html; charset=UTF-8");
+		 request.setCharacterEncoding("UTF-8");
+		
+		 PrintWriter out = response.getWriter();
+		String n = request.getParameter("name");
+		String i = request.getParameter("id");
+		String p = request.getParameter("pwd");
+		out.print("hello - get <br>");
+		out.print("이름" + n + "<br>");
+		out.print(i + "<BR>");
+		out.print(p);
+		out.print("hello - post");
+		
 	}
 
 }
